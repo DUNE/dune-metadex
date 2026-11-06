@@ -1,0 +1,42 @@
+schema: intent-driven
+
+# Read-only connection to the hep-metadex OpenSpec Store. The `remote` is
+# advisory: on machines where the store is not yet registered, `openspec
+# doctor` prints a pasteable clone-and-register fix citing it.
+# Never add a `store:` line here: this experiment's specs and changes stay in
+# this repository, and common-capability improvements route to the store
+# explicitly with `--store hep-metadex`.
+references:
+  - id: hep-metadex
+    remote: https://github.com/DUNE/hep-metadex.git
+
+context: |
+  Tech stack: TBD
+  We use conventional commits; every commit references its change's issue number as a (#N) subject suffix; Closes #N appears only in the archive-phase commit
+  Domain: DUNE long-baseline neutrino experiment metadata management
+
+  Use senior-dev sub-agent for all src related work and senior-qa for acceptance tests.
+  Do not optimize the batch the tasks for senior-dev and senior-qa, call them as many times as necessary in smaller batches as dev and qa work may be interleaved.
+
+rules:
+  proposal:
+    - Must use grill-me skill
+    - Must use adversarial-authoring skill
+    - Must use glossary skill
+  design:
+    - Must use c4-diagrams skill
+    - Must use glossary skill
+  adr:
+    - Must use architectural-decision-records skill
+  specs:
+    - Must use spec-as-source skill
+  tasks:
+    - Must use spec-as-source skill
+
+operations:
+  apply:
+    guidance:
+      - Must use test-driven-development skill
+  archive:
+    guidance:
+      - Must run OpenSpec Sync before archiving
